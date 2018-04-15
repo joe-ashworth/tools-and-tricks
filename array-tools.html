@@ -37,8 +37,8 @@
       {
         first: 'Johannes',
         last: 'Kepler',
-        year: 1867,
-        passed: 1934
+        year: 1571,
+        passed: 1630
       },
       {
         first: 'Nicolaus',
@@ -49,7 +49,7 @@
       {
         first: 'Max',
         last: 'Planck',
-        year 1858,
+        year: 1858,
         passed: 1947
       },
     ];
@@ -74,7 +74,45 @@
       'car', 'van', 'bike', 'walk', 'car', 'van',
       'car', 'truck'
     ];
+
+    // FILTER
+    // variable equals arrayname.filter(anonFunction)
+    // anonFunction (arrayItem => truthy statement about array item)
+    // variable is populated with array items that were truthy
+    const fifteen = inventors.filter(inventor =>
+      inventor.year >= 1500 && inventor.year <= 1599
+    );
+    console.table(fifteen);
+
+    // MAP
+    // new variable equals arrayname.map(anonFunction)
+    // anonFunction (arrayItem => create what to return to each index)
+    // variable is populated with modified array items from return line
+    const fullNames = inventors.map(inventor =>
+      `${inventor.first} ${inventor.last}`
+    );
+    console.table(fullNames);
+
+    //REDUCE  - example finds total years lived for all inventors
+    // new variable equals arrayname.reduce. first arg is function with total
+    // and inventor coming in (total is new and null), and total with
+    // logic being returned. 2nd arg is starting value of total.
+    const totalYears = inventors.reduce((total, inventor) => {
+      return total + (inventor.passed - inventor.year);
+    }, 0);
+    console.log(totalYears);
+
+    // SORT
+    // grabs 2 items in array at a time and compares them, returning
+    // a 1 or -1 which moves index of the item up or down. continues til done.
+    const ordered = inventors.sort((a, b) =>
+      a.year > b.year ? 1 : -1
+    );
+    console.table(ordered);
   </script>
+
+
+
 </body>
 
 </html>

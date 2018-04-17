@@ -61,23 +61,104 @@
     // space or a "#" character. The characters should form a
     // chess board.
 
-    const size = 8;
-    for (let i = 1; i <= size; i++) {
-      let str = '';
-      for (let j = 1; j <= size; j++) {
-        if ((j % 2 !== 0) && (i % 2 !== 0)) {
-          str = str + ' ';
-        } else if ((j % 2 === 0) && (i % 2 !== 0)) {
-          str = str + '#';
-        } else if ((j % 2 === 0) && (i % 2 === 0)) {
-          str = str + ' ';
-        } else if ((j % 2 !== 0) && (i % 2 === 0)) {
-          str = str + '#';
+    // const size = 8;
+    // for (let i = 1; i <= size; i++) {
+    //   let str = '';
+    //   for (let j = 1; j <= size; j++) {
+    //     if ((j % 2 !== 0) && (i % 2 !== 0)) {
+    //       str = str + ' ';
+    //     } else if ((j % 2 === 0) && (i % 2 !== 0)) {
+    //       str = str + '#';
+    //     } else if ((j % 2 === 0) && (i % 2 === 0)) {
+    //       str = str + ' ';
+    //     } else if ((j % 2 !== 0) && (i % 2 === 0)) {
+    //       str = str + '#';
+    //     }
+    //   }
+    //   str = str + '\n';
+    //   console.log(str);
+    // }
+
+
+    /////////////////////////////////////////////////////////////////////////
+    // Write a function min that takes two arguments and
+    // returns their minimum.
+
+    // let min = (a, b) => {
+    //   if (a < b) {
+    //     return a;
+    //   } else {
+    //     return b;
+    //   }
+    // }
+
+    // console.log(min(0, 10));
+    // → 0
+    // console.log(min(0, -10));
+    // → -10
+
+
+    ///////////////////////////////////////////////////////////////////////////
+    // Define a recursive function isEven corresponding to this
+    // description. The function should accept a single parameter
+    // (a positive, whole number) and return a Boolean.
+
+    // Your code here.
+    // let isEven = (num) => {
+    //   if (num < 0) {
+    //     return isEven(-num);
+    //   } else if (num === 1) {
+    //     return false;
+    //   } else if (num === 0) {
+    //     return true;
+    //   } else {
+    //     return isEven(num - 2)
+    //   }
+    // }
+
+    // console.log(isEven(50));
+    // → true
+    // console.log(isEven(75));
+    // → false
+    // console.log(isEven(-1));
+    // → ??
+
+
+
+    // Write a function countBs that takes a string as its only
+    // argument and returns a number that indicates how many
+    // uppercase “B” characters there are in the string.
+    //
+    // Next, write a function called countChar that behaves like
+    // countBs, except it takes a second argument that indicates
+    // the character that is to be counted (rather than counting
+    // only uppercase “B” characters). Rewrite countBs to make
+    // use of this new function.
+
+    let countBs = str => {
+      let total = 0;
+      for (let c = 0; c < str.length; c++) {
+        if (str[c] === 'B') {
+          total++;
         }
       }
-      str = str + '\n';
-      console.log(str);
+      return total;
     }
+
+    let countChar = (myString, letter) => {
+      let totalLetters = 0;
+      for (let i = 0; i < myString.length; i++) {
+        if (myString[i] === letter) {
+          totalLetters++;
+        }
+      }
+      return totalLetters;
+    }
+
+    console.log(countBs("BBC"));
+    // → 2
+    console.log(countChar("kakkerlak", "k"));
+    // → 4
   </script>
 
 </body>
